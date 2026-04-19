@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/profile.dart';
-import 'pages/components/bottomNavBar.dart'; // Import navbar barumu
+import 'pages/dashboard.dart'; // Pastikan path-nya sesuai
+import 'pages/profile.dart'; 
+import 'pages/components/bottomNavBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      title: 'Technokrat Project',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
+      ),
+      // Di sini jembatannya. Nantinya kawanmu bakal mulai dari LoginPage()
+      // Tapi karena kamu mau ngerjain Dashboard dulu, kita set home ke MainScreen
+      home: const MainScreen(), 
     );
   }
 }
@@ -26,19 +34,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 1; // Default ke Profile dulu
+  // Ubah ke 0 supaya yang pertama tampil adalah Dashboard (index ke-0)
+  int _currentIndex = 0; 
 
-  // List halaman
+  // List halaman yang dipanggil dari file terpisah
   final List<Widget> _screens = [
-    const Center(child: Text("Dashboard Page")), 
-    const ProfilePage(),
+    const DashboardPage(), // Halaman Dashboard-mu
+    const ProfilePage(),   // Halaman Profile yang tadi kita buat
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      // Pakai Custom Navbar yang sudah dipisah filenya
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
         onTap: (index) {
