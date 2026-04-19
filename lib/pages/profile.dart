@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
+  void _logout(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +107,7 @@ class ProfilePage extends StatelessWidget {
 
             // Tombol Logout
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () => _logout(context),
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Color(0xFFE5D1B2), width: 2),
                 shape: RoundedRectangleBorder(
