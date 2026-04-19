@@ -1,5 +1,7 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:flutter/material.dart';
-import 'pages/dashboard.dart'; // Pastikan path-nya sesuai
+import 'pages/dashboard.dart';
 import 'pages/profile.dart'; 
 import 'pages/components/bottomNavBar.dart';
 
@@ -15,12 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Technokrat Project',
+      // font poppins
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         useMaterial3: true,
+        textTheme: GoogleFonts.poppinsTextTheme(), 
       ),
-      // Di sini jembatannya. Nantinya kawanmu bakal mulai dari LoginPage()
-      // Tapi karena kamu mau ngerjain Dashboard dulu, kita set home ke MainScreen
       home: const MainScreen(), 
     );
   }

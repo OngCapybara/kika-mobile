@@ -65,7 +65,7 @@ class ProfilePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       "Student Of",
-                      style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      style: TextStyle(fontSize: 10, color: Colors.grey[600]),
                     ),
                   ),
                   const Expanded(
