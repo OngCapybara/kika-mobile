@@ -6,7 +6,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -33,7 +33,11 @@ class ProfilePage extends StatelessWidget {
                     const SizedBox(height: 100),
                     const CircleAvatar(
                       radius: 70,
-                      backgroundColor: Color(0xFFD9D9D9),
+                      backgroundColor: Color(
+                        0xFFD9D9D9,
+                      ), // Warna dasar kalau foto gagal load
+                      // INI KUNCINYA: Tambahkan baris ini
+                      backgroundImage: AssetImage("assets/images/kika.jpeg"),
                     ),
                     const SizedBox(height: 16),
                     const Text(
@@ -105,11 +109,17 @@ class ProfilePage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 60,
+                  vertical: 12,
+                ),
               ),
               child: const Text(
                 'Logout',
-                style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ),
             const SizedBox(height: 50),
